@@ -1,3 +1,5 @@
+package com.appian.carddeck;
+
 /**
  * Rank.java
  *

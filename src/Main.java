@@ -1,3 +1,5 @@
+import com.appian.carddeck.Suit;
+
 public class Main {
 
     public static void main(String[] args) {

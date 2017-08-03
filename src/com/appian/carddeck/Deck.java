@@ -1,5 +1,7 @@
+package com.appian.carddeck;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -7,7 +9,7 @@ import java.util.List;
  *
  * Class representing a traditional deck of cards comprised of 52 cards with four suits and thirteen ranks.
  */
-public class Deck implements DeckInterface {
+public class Deck implements IDeck {
 
     private List<Card> _cards;
 
@@ -16,13 +18,18 @@ public class Deck implements DeckInterface {
      */
     public Deck() {
         _cards = new ArrayList<>(52);
+        for (Suit s : Suit.values()) {
+            for (Rank r : Rank.values()) {
+                _cards.add(new Card(r, s));
+            }
+        }
     }
 
     /**
      *
      */
     public void sort() {
-
+        Collections.sort(_cards);
     }
 
     /**
@@ -39,15 +46,19 @@ public class Deck implements DeckInterface {
      */
     @Override
     public Card dealOneCard() {
-        return null;
+        Card c = null;
+        if (_cards.size() > 0) {
+            c = _cards.remove(_cards.size() - 1);
+        }
+        return c;
     }
 
     /**
      *
      * @return
      */
-    public int getNumberOfCardsRemaining() {
-        return 0;
+    public int getSize() {
+        return _cards.size();
     }
 
     /**
@@ -55,7 +66,7 @@ public class Deck implements DeckInterface {
      * @return
      */
     public List<Card> getCards() {
-        return null;
+        return _cards;
     }
 
     /**

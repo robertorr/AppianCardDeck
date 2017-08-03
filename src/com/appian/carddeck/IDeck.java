@@ -1,9 +1,12 @@
 /**
- * DeckInterface.java
+ * IDeck.java
  *
  * Interface specifying operations that a deck of cards must implement.
  */
-public interface DeckInterface {
+
+package com.appian.carddeck;
+
+public interface IDeck {
     /**
      *
      */
