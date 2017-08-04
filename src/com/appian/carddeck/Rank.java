@@ -1,8 +1,10 @@
+/*
+ *    File: Rank.java
+ *  Author: Robert J. Orr
+ */
 package com.appian.carddeck;
 
 /**
- * Rank.java
- *
  * Enumeration representing the thirteen traditional ranks of a deck of playing cards.
  */
 public enum Rank {
@@ -18,5 +20,15 @@ public enum Rank {
     TEN,
     JACK,
     QUEEN,
-    KING
+    KING;
+
+    /**
+     * Returns a string representation of the Rank, in capitalized form.
+     *
+     * @return string representation of Rank
+     */
+    @Override
+    public String toString() {
+        return Character.toUpperCase(this.name().charAt(0)) + this.name().substring(1).toLowerCase();
+    }
 }

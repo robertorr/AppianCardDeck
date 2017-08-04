@@ -1,22 +1,29 @@
-/**
- * Card.java
- *
- * Class representing a playing card.
+/*
+ *    File: Card.java
+ *  Author: Robert J. Orr
  */
 
 package com.appian.carddeck;
 
-public class Card implements Comparable<Card> {
-    private Rank _rank;
-    private Suit _suit;
-    private int _hashCode;
+import java.io.Serializable;
+
+/**
+ * Class representing a playing card.  Cards have a rank and a suit, and individual cards are comparable.
+ */
+public class Card implements Comparable<Card>, Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private final Rank _rank;
+    private final Suit _suit;
+    private final int _hashCode;
 
     /**
      *
      * @param r
      * @param s
      */
-    public Card(Rank r, Suit s) {
+    public Card(final Rank r, final Suit s) {
         // check for nullity
         if (r == null) {
             throw new NullPointerException("rank is null");
@@ -75,7 +82,7 @@ public class Card implements Comparable<Card> {
      * @return
      */
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         // short-cut optimization
         if (this == obj) {
             return true;
@@ -106,13 +113,7 @@ public class Card implements Comparable<Card> {
      * @return
      */
     @Override
-    public int compareTo(Card c) {
-        // compare rank first
-        int result = this._rank.compareTo(c._rank);
-        // if rank is equal, compare suit
-        if (result == 0) {
-            result = this._suit.compareTo(c._suit);
-        }
-        return result;
+    public int compareTo(final Card c) {
+        return this._rank.compareTo(c._rank);
     }
 }
