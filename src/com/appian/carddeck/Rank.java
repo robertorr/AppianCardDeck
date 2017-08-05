@@ -6,6 +6,9 @@ package com.appian.carddeck;
 
 /**
  * Enumeration representing the thirteen traditional ranks of a deck of playing cards.
+ *
+ * @author Robert Orr
+ * @version 1.0
  */
 public enum Rank {
     ACE,
@@ -21,6 +24,8 @@ public enum Rank {
     JACK,
     QUEEN,
     KING;
+
+    // TODO: i18n
 
     /**
      * Returns a string representation of the Rank, in capitalized form.

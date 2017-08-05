@@ -9,6 +9,9 @@ import java.io.Serializable;
 
 /**
  * Class representing a playing card.  Cards have a rank and a suit, and individual cards are comparable.
+ *
+ * @author Robert Orr
+ * @version 1.0
  */
 public class Card implements Comparable<Card>, Serializable {
 
@@ -17,6 +20,9 @@ public class Card implements Comparable<Card>, Serializable {
     private final Rank _rank;
     private final Suit _suit;
     private final int _hashCode;
+
+    // TODO: add factory method and pull from cache of constant Cards (see java.lang.Integer)
+    // TODO: add trump suit
 
     /**
      *
@@ -73,6 +79,7 @@ public class Card implements Comparable<Card>, Serializable {
      */
     @Override
     public String toString() {
+        // TODO: i18n
         return _rank.toString() + " of " + _suit.toString();
     }
 
@@ -94,7 +101,7 @@ public class Card implements Comparable<Card>, Serializable {
         }
 
         // check fields using their equals() methods
-        Card c = (Card)obj;
+        Card c = (Card) obj;
         return this._rank.equals(c._rank) && this._suit.equals(c._suit);
     }
 
@@ -114,6 +121,7 @@ public class Card implements Comparable<Card>, Serializable {
      */
     @Override
     public int compareTo(final Card c) {
+        // compare rank only
         return this._rank.compareTo(c._rank);
     }
 }

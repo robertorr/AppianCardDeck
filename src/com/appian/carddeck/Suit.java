@@ -6,13 +6,18 @@ package com.appian.carddeck;
 
 /**
  * Enumeration representing the four traditional suits of a deck of playing cards (clubs, diamonds, hearts, spades).
- * Suit ordinality is the de facto standard established by the card game bridge.
+ * Suit ordinality is the <i>de facto</i> standard established by the card game bridge.
+ *
+ * @author Robert Orr
+ * @version 1.0
  */
 public enum Suit {
     CLUBS,
     DIAMONDS,
     HEARTS,
     SPADES;
+
+    // TODO: i18n
 
     /**
      * Returns a string representation of the Suit, in capitalized form.
