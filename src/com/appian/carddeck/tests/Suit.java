@@ -2,7 +2,7 @@
  *    File: Suit.java
  *  Author: Robert J. Orr
  */
-package com.appian.carddeck;
+package com.appian.carddeck.tests;
 
 /**
  * Enumeration representing the four traditional suits of a deck of playing cards (clubs, diamonds, hearts, spades).
@@ -17,6 +17,7 @@ public enum Suit {
     HEARTS,
     SPADES;
 
+    // TODO: add trump suit
     // TODO: i18n
 
     /**

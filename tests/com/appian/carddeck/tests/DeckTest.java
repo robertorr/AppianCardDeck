@@ -1,4 +1,8 @@
-package com.appian.carddeck;
+/*
+ *    File: CardTest.java
+ *  Author: Robert J. Orr
+ */
+package com.appian.carddeck.tests;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,6 +10,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * jUnit test class for Deck
+ *
+ * @author Robert Orr
+ * @version 1.0
+ */
 public class DeckTest {
     @Before
     public void setUp() throws Exception {
@@ -13,6 +23,18 @@ public class DeckTest {
 
     @After
     public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void test_deck() throws Exception {
+    }
+
+    @Test
+    public void test_populateDeck() throws Exception {
+    }
+
+    @Test
+    public void test_reset() throws Exception {
     }
 
     @Test
@@ -28,7 +50,7 @@ public class DeckTest {
     }
 
     @Test
-    public void test_getNumberOfCardsRemaining() throws Exception {
+    public void test_getSize() throws Exception {
     }
 
     @Test

@@ -1,5 +1,5 @@
-import com.appian.carddeck.Card;
-import com.appian.carddeck.Deck;
+import com.appian.carddeck.tests.Card;
+import com.appian.carddeck.tests.Deck;
 
 public class Main {
 
@@ -24,16 +24,17 @@ public class Main {
         System.out.println("hash code: " + d.hashCode());
         System.out.println("deck size: " + d.getSize());
 
-        //        for (int i = 0; i < 55; ++i) {
-//            Card c = d.dealOneCard();
-//            if (c == null) {
-//                System.out.println("card " + i + " is null!");
-//                continue;
-//            }
-//            System.out.println("card " + i + ": " + c.toString());
-//            System.out.println("hash code: " + c.hashCode());
-//            System.out.println("deck size: " + d.getSize());
-//            System.out.println("");
-//        }
+        for (int i = 0; i < 55; ++i) {
+            Card c = d.dealOneCard();
+            if (c == null) {
+                System.out.println("card " + i + " is null!");
+                System.out.println("deck: " + d.toString());
+                continue;
+            }
+            System.out.println("card " + i + ": " + c.toString());
+            System.out.println("hash code: " + c.hashCode());
+            System.out.println("deck size: " + d.getSize());
+            System.out.println("");
+        }
     }
 }

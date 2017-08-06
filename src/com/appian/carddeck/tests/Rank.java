@@ -2,7 +2,7 @@
  *    File: Rank.java
  *  Author: Robert J. Orr
  */
-package com.appian.carddeck;
+package com.appian.carddeck.tests;
 
 /**
  * Enumeration representing the thirteen traditional ranks of a deck of playing cards.
