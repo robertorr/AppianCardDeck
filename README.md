@@ -2,7 +2,7 @@
 This project is an implementation of the coding problem given by Appian.  The requirements are given in the included document: `DeckofCardsProblemStatement.pdf`.
 
 
-##Assumptions and Design Choices
+## Assumptions and Design Choices
 * The requirements from the problem statement have been coded into an `IDeck` interface.  The `Deck` class then implements these requirements.
 * I decided to an `ArrayList` (rather than a `LinkedList`, for example) to hold the cards for the deck because:
   * `size()`, `get()`, and `set()` methods run in _O(1)_ time (vs. _O(n)_ time),
