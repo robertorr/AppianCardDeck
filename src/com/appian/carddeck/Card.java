@@ -3,7 +3,7 @@
  *  Author: Robert J. Orr
  */
 
-package com.appian.carddeck.tests;
+package com.appian.carddeck;
 
 import java.io.Serializable;
 

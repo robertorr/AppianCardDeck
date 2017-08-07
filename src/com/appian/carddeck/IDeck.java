@@ -2,7 +2,7 @@
  *    File: IDeck.java
  *  Author: Robert J. Orr
  */
-package com.appian.carddeck.tests;
+package com.appian.carddeck;
 
 /**
  * Interface specifying operations that a deck of cards must implement.

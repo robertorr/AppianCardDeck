@@ -106,7 +106,7 @@
   <property name="module.jdk.bin.appiancarddeck" value="${project.jdk.bin}"/>
   <property name="module.jdk.classpath.appiancarddeck" value="${project.jdk.classpath}"/>
   
-  <property name="compiler.args.appiancarddeck" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  <property name="compiler.args.appiancarddeck" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
   
   <property name="appiancarddeck.output.dir" value="${module.appiancarddeck.basedir}/out/production/AppianCardDeck"/>
   <property name="appiancarddeck.testoutput.dir" value="${module.appiancarddeck.basedir}/out/test/AppianCardDeck"/>
@@ -126,11 +126,19 @@
   <path id="appiancarddeck.module.classpath">
     <path refid="${module.jdk.classpath.appiancarddeck}"/>
     <pathelement location="${appiancarddeck.output.dir}"/>
+    <pathelement location="${idea.home}/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+    <pathelement location="${idea.home}/plugins/junit/lib/junit-jupiter-api-5.0.0-M5.jar"/>
+    <pathelement location="${idea.home}/plugins/junit/lib/opentest4j-1.0.0-M2.jar"/>
   </path>
   
   <path id="appiancarddeck.runtime.module.classpath">
     <pathelement location="${appiancarddeck.testoutput.dir}"/>
     <pathelement location="${appiancarddeck.output.dir}"/>
+    <pathelement location="${idea.home}/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+    <pathelement location="${idea.home}/plugins/junit/lib/junit-jupiter-api-5.0.0-M5.jar"/>
+    <pathelement location="${idea.home}/plugins/junit/lib/opentest4j-1.0.0-M2.jar"/>
   </path>
   
   
@@ -145,6 +153,12 @@
   <path id="appiancarddeck.module.sourcepath">
     <dirset dir="${module.appiancarddeck.basedir}">
       <include name="src"/>
+    </dirset>
+  </path>
+  
+  <path id="appiancarddeck.module.test.sourcepath">
+    <dirset dir="${module.appiancarddeck.basedir}">
+      <include name="tests"/>
     </dirset>
   </path>
   
@@ -169,7 +183,23 @@
     </copy>
   </target>
   
-  <target name="compile.module.appiancarddeck.tests" depends="compile.module.appiancarddeck.production" description="compile module AppianCardDeck; test classes" unless="skip.tests"/>
+  <target name="compile.module.appiancarddeck.tests" depends="compile.module.appiancarddeck.production" description="compile module AppianCardDeck; test classes" unless="skip.tests">
+    <mkdir dir="${appiancarddeck.testoutput.dir}"/>
+    <javac destdir="${appiancarddeck.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.appiancarddeck}/javac">
+      <compilerarg line="${compiler.args.appiancarddeck}"/>
+      <bootclasspath refid="appiancarddeck.module.bootclasspath"/>
+      <classpath refid="appiancarddeck.module.classpath"/>
+      <src refid="appiancarddeck.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.appiancarddeck"/>
+    </javac>
+    
+    <copy todir="${appiancarddeck.testoutput.dir}">
+      <fileset dir="${module.appiancarddeck.basedir}/tests">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
   
   <target name="clean.module.appiancarddeck" description="cleanup module">
     <delete dir="${appiancarddeck.output.dir}"/>

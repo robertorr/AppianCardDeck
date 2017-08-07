@@ -2,7 +2,7 @@
  *    File: CardTest.java
  *  Author: Robert J. Orr
  */
-package com.appian.carddeck.tests;
+package com.appian.carddeck;
 
 import org.junit.After;
 import org.junit.Before;
@@ -33,6 +33,7 @@ public class CardTest {
     public void test_card() throws Exception {
         Card c = new Card(Rank.ACE, Suit.SPADES);
         assertNotNull("card is null", c);
+        // check contract
         assertTrue("card is not Comparable", c instanceof Comparable);
         assertTrue("card is not Serializable", c instanceof Serializable);
     }
@@ -78,6 +79,7 @@ public class CardTest {
     public void test_equals() throws Exception {
         Card c1 = new Card(Rank.ACE, Suit.SPADES);
         Card c2 = new Card(Rank.ACE, Suit.SPADES);
+        assertTrue("card failed equality test", c1.equals(c1));
         assertTrue("card failed equality test", c1.equals(c2));
         assertTrue("card failed equality test", c2.equals(c1));
 
