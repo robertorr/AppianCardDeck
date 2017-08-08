@@ -18,10 +18,7 @@ public class Card implements Comparable<Card>, Serializable {
 
     // TODO: add factory method and pull from cache of constant Cards (see java.lang.Integer)
 
-    /**
-     * User for serialization.
-     */
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -3520807187208430671L;
 
     /**
      * Card rank.

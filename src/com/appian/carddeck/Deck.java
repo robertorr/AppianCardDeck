@@ -28,10 +28,7 @@ public class Deck implements IDeck, Serializable {
     // TODO: make class thread-safe
     // TODO: expose more methods of underlying List, such as set(), get(), and contains() (probably as protected)
 
-    /**
-     * Used for serialization.
-     */
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -6045156575809251722L;
     /**
      * Comparator for 'natural' ordering of deck.
      */
