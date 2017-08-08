@@ -21,6 +21,7 @@ This project is an implementation of the coding problem given by Appian.  The re
 ## Ideas for Future Improvement
 
 * Make `Deck` class thread-safe and add requisite tests
+* Determine how to measure efficacy of `shuffle()` method.  Perhaps some measure of the _entropy_ of the cards would work. (The sorted deck would have the lowest amount of entropy, etc.)
 * Statically construct all possible `Cards` and store in a cache.  A factory method could be added to `Card` to retrieve the requested `Card`.  This is similar to what `java.lang.Integer` does with values between -128 and 127.
 * Add the capability to have a trump suit.  The card `Comparator` would need to change to accommodate this.
 * Add internationalization (_i18n_) to the various `toString()` methods
