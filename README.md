@@ -15,6 +15,7 @@ This project is an implementation of the coding problem given by Appian.  The re
   * The protected methods exposed the `ArrayList` that contains the cards.  A subclass can alter the list as it sees fit (for example, inserting/removing cards at arbitrary locations), or by adding more sets of cards to the deck to make a 'shoe'.
 * The `Card` class is immutable.  It is therefore likely thread-safe, but multi-threaded testing would need to be done to ensure that this is true.
 * The `Deck` class is _not_ thread-safe.  Probably not much more code would need to be added (a few strategically placed `synchronized` keywords on methods), but to ensure thread-safety much more testing would need to be done.
+* All classes have been made `Serializable` in order to persist their instances or send them over the wire.  (Note: `enums` are `Serializable` by default.)
 
 
 ## Ideas for Future Improvement
